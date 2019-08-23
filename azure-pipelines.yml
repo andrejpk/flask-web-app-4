@@ -1,0 +1,17 @@
+# build pipeline for Python web app deploying to Azure App Service
+
+trigger:
+  - master
+
+variables:
+  ConnectedServiceName: "Andrej's Azure Subscription"
+
+jobs:
+  - job: hello_world
+    displayName: Hello World
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+      - script: |
+          echo Hello Pipelines
+        displayName: "Install Dependencies"
