@@ -26,6 +26,12 @@ jobs:
 
         displayName: "Install Dependencies"
 
+      - script: |
+          source antenv3.6/bin/activate
+          cd hello_app
+          python3.6 -m pytest
+        displayName: "Run tests"
+
       - task: ArchiveFiles@2
         inputs:
           rootFolderOrFile: "$(Build.SourcesDirectory)"
